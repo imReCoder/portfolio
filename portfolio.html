@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moksha Vignan — Engineer</title>
+    <meta name="description"
+        content="Moksha Vignan Nimmagadda — ITM Graduate Student with a foundation in electrical engineering, VLSI, and IoT.">
+    <meta property="og:title" content="Moksha Vignan — Engineer">
+    <meta property="og:description" content="Portfolio showcasing engineering projects and experience.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;1,400;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+
+<body>
+
+    <header class="topbar" id="topbar">
+        <div class="brand">
+            <div class="brand-name">Moksha Vignan</div>
+            <div class="brand-title">Engineer &amp; ITM Graduate</div>
+        </div>
+
+        <nav class="tabs" id="tabs">
+            <span class="tabs-indicator"></span>
+            <button class="tab-btn" id="btnWork" type="button">Work</button>
+            <button class="tab-btn active" id="btnInfo" type="button">Info</button>
+        </nav>
+
+        <div class="ext-links">
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="ext-link">
+                LinkedIn
+                <svg viewBox="0 0 24 24">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg>
+            </a>
+            <a href="#" class="ext-link">
+                Resume
+                <svg viewBox="0 0 24 24">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- Work Tab -->
+        <div class="panel hidden" id="panelWork">
+
+            <section class="hero" id="hero">
+                <div class="hero-box fade-in">
+                    <div class="win-bar">
+                        <div class="win-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="win-add">+</div>
+                    </div>
+                    <div class="hero-inner">
+                        <h1 class="hero-title">
+                            I design circuits,<br>
+                            systems &amp; <em>solutions.</em>
+                        </h1>
+
+                        <div class="hero-meta">
+                            <p class="hero-role"><strong>ITM Graduate Student. Based in Long Beach, CA.</strong></p>
+                            <p class="hero-prev">Formerly at Cloud Software Solutions, Bengaluru.</p>
+                        </div>
+
+                        <div class="hero-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M12 5v14M5 12l7 7 7-7" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="work-grid" id="work">
+
+                <article class="card fade-in" data-project="alu">
+                    <div class="card-top">
+                        <div class="card-info">
+                            <h2 class="card-name">Obfuscated 32-Bit ALU</h2>
+                            <p class="card-desc">VLSI — Security-based logic obfuscation with Vedic multiplication &amp;
+                                BCD optimization.</p>
+                        </div>
+                        <a href="project.html?id=alu" class="card-arrow" aria-label="View project">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="card-thumb">
+                        <div class="mockup">
+                            <div class="win-dots"><span class="dot red"></span><span class="dot yellow"></span><span
+                                    class="dot green"></span></div>
+                            <div class="mockup-bar">
+                                <div class="mockup-nav"><span>←</span> <span>→</span> <span>↻</span></div>
+                                <div class="mockup-url"></div>
+                                <div class="mockup-actions"><span>⊕</span> <span>⋮</span></div>
+                            </div>
+                            <div class="mockup-screen"><img src="images/project-stadia.png" alt="ALU Architecture"
+                                    loading="lazy"></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card fade-in" data-project="switch">
+                    <div class="card-top">
+                        <div class="card-info">
+                            <h2 class="card-name">4-Port Switch/Router</h2>
+                            <p class="card-desc">RTL Design — Parameterized switching datapath with UVM verification
+                                &amp; STA checks.</p>
+                        </div>
+                        <a href="project.html?id=switch" class="card-arrow" aria-label="View project">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="card-thumb">
+                        <div class="mockup">
+                            <div class="win-dots"><span class="dot red"></span><span class="dot yellow"></span><span
+                                    class="dot green"></span></div>
+                            <div class="mockup-bar">
+                                <div class="mockup-nav"><span>←</span> <span>→</span> <span>↻</span></div>
+                                <div class="mockup-url"></div>
+                                <div class="mockup-actions"><span>⊕</span> <span>⋮</span></div>
+                            </div>
+                            <div class="mockup-screen"><img src="images/project-testhub.png" alt="Switch Router"
+                                    loading="lazy"></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card fade-in" data-project="pcie">
+                    <div class="card-top">
+                        <div class="card-info">
+                            <h2 class="card-name">PCIe Transaction Layer</h2>
+                            <p class="card-desc">Digital Design — Memory Read/Write endpoint with BAR0 decode &amp;
+                                credit counters.</p>
+                        </div>
+                        <a href="project.html?id=pcie" class="card-arrow" aria-label="View project">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="card-thumb">
+                        <div class="mockup">
+                            <div class="win-dots"><span class="dot red"></span><span class="dot yellow"></span><span
+                                    class="dot green"></span></div>
+                            <div class="mockup-bar">
+                                <div class="mockup-nav"><span>←</span> <span>→</span> <span>↻</span></div>
+                                <div class="mockup-url"></div>
+                                <div class="mockup-actions"><span>⊕</span> <span>⋮</span></div>
+                            </div>
+                            <div class="mockup-screen"><img src="images/project-cards.png" alt="PCIe Endpoint"
+                                    loading="lazy"></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card fade-in" data-project="irrigation">
+                    <div class="card-top">
+                        <div class="card-info">
+                            <h2 class="card-name">Smart Drip Irrigation</h2>
+                            <p class="card-desc">IoT — Arduino-based automated irrigation with real-time humidity &amp;
+                                temperature monitoring.</p>
+                        </div>
+                        <a href="project.html?id=irrigation" class="card-arrow" aria-label="View project">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="card-thumb">
+                        <div class="mockup">
+                            <div class="win-dots"><span class="dot red"></span><span class="dot yellow"></span><span
+                                    class="dot green"></span></div>
+                            <div class="mockup-bar">
+                                <div class="mockup-nav"><span>←</span> <span>→</span> <span>↻</span></div>
+                                <div class="mockup-url"></div>
+                                <div class="mockup-actions"><span>⊕</span> <span>⋮</span></div>
+                            </div>
+                            <div class="mockup-screen"><img src="images/project-stadia.png" alt="Smart Irrigation"
+                                    loading="lazy"></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card fade-in" data-project="vehicle">
+                    <div class="card-top">
+                        <div class="card-info">
+                            <h2 class="card-name">Vehicle Speed Control</h2>
+                            <p class="card-desc">Embedded Systems — Automatic speed regulation with accident prevention
+                                using embedded controllers.</p>
+                        </div>
+                        <a href="project.html?id=vehicle" class="card-arrow" aria-label="View project">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="card-thumb">
+                        <div class="mockup">
+                            <div class="win-dots"><span class="dot red"></span><span class="dot yellow"></span><span
+                                    class="dot green"></span></div>
+                            <div class="mockup-bar">
+                                <div class="mockup-nav"><span>←</span> <span>→</span> <span>↻</span></div>
+                                <div class="mockup-url"></div>
+                                <div class="mockup-actions"><span>⊕</span> <span>⋮</span></div>
+                            </div>
+                            <div class="mockup-screen"><img src="images/project-testhub.png" alt="Vehicle Speed Control"
+                                    loading="lazy"></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card fade-in" data-project="insect">
+                    <div class="card-top">
+                        <div class="card-info">
+                            <h2 class="card-name">Insect Detector &amp; Agri</h2>
+                            <p class="card-desc">Agriculture IoT — Solar-powered pest detection with automated drip
+                                irrigation system.</p>
+                        </div>
+                        <a href="project.html?id=insect" class="card-arrow" aria-label="View project">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="card-thumb">
+                        <div class="mockup">
+                            <div class="win-dots"><span class="dot red"></span><span class="dot yellow"></span><span
+                                    class="dot green"></span></div>
+                            <div class="mockup-bar">
+                                <div class="mockup-nav"><span>←</span> <span>→</span> <span>↻</span></div>
+                                <div class="mockup-url"></div>
+                                <div class="mockup-actions"><span>⊕</span> <span>⋮</span></div>
+                            </div>
+                            <div class="mockup-screen"><img src="images/project-cards.png" alt="Insect Detector"
+                                    loading="lazy"></div>
+                        </div>
+                    </div>
+                </article>
+
+            </section>
+
+        </div>
+
+        <!-- Info Tab -->
+        <div class="panel" id="panelInfo">
+
+            <section class="about fade-in" id="about">
+                <div class="tag">
+                    <span class="tag-dot"></span>
+                    <span class="tag-text">About Me</span>
+                </div>
+                <h1 class="about-title">
+                    I'm passionate about building reliable
+                    hardware that <em>powers innovation.</em>
+                </h1>
+            </section>
+
+            <section class="story" id="story">
+                <div class="story-row alt fade-in">
+                    <div class="frame portrait">
+                        <img src="images/portrait.png" alt="Portrait photo" loading="lazy">
+                    </div>
+                    <div class="story-block">
+                        <p class="story-intro">
+                            This is my story — from electrical engineering
+                            in India to IT management in the US.
+                        </p>
+                        <div class="frame landscape">
+                            <img src="images/torii.png" alt="Torii gates" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-row fade-in">
+                    <div class="story-block">
+                        <h2 class="story-heading">My foundation in Electrical Engineering.</h2>
+                        <p class="story-copy">
+                            In 2024, I graduated from VIT-AP University with a Bachelor's
+                            in Electrical Engineering (GPA: 3.00). There, I became obsessed with
+                            VLSI design and digital logic.
+                        </p>
+                        <p class="story-copy">
+                            I was deeply fascinated by RTL design, verification methodologies,
+                            and how silicon could be architected to solve
+                            real-world problems at scale.
+                        </p>
+                    </div>
+                    <div class="frame landscape">
+                        <img src="images/mountain.png" alt="Mountain landscape" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="story-row alt fade-in">
+                    <div class="frame portrait">
+                        <img src="images/playground.png" alt="Colorful playground" loading="lazy">
+                    </div>
+                    <div class="story-block">
+                        <h2 class="story-heading">Then, I wanted more.</h2>
+                        <p class="story-copy">
+                            After completing my Master's in Electrical Engineering at
+                            California State University (2024–2025), I pursued IT Management
+                            at Cumberland University.
+                        </p>
+                        <p class="story-copy">
+                            I wanted to bridge hardware engineering with technology
+                            leadership — combining my technical depth with strategic
+                            management skills.
+                        </p>
+                        <div class="frame landscape">
+                            <img src="images/fishing.png" alt="Fishing by the ocean" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="sep">
+                <div class="sep-line"></div>
+            </div>
+
+            <section class="exp fade-in" id="experience">
+                <div class="tag">
+                    <span class="tag-dot"></span>
+                    <span class="tag-text">Work Experience</span>
+                </div>
+                <div class="exp-list">
+                    <div class="exp-row fade-in">
+                        <div class="exp-org">Cloud Software Solutions</div>
+                        <div class="exp-info">
+                            <div class="exp-role">Digital Design Engineer Intern</div>
+                            <div class="exp-date">Jun 2023 - Dec 2023 · Bengaluru, India</div>
+                            <p class="exp-text">
+                                Assisted the digital design team in validating and enhancing pre-developed Verilog
+                                modules such as ADC interfaces, simple filters, and PWM generators, ensuring functional
+                                correctness through simulation in Synopsys VCS.
+                            </p>
+                            <p class="exp-text">
+                                Wrote directed testbenches in Verilog to verify functional scenarios and corner cases
+                                and supported debugging of simulation mismatches alongside senior engineers. Created
+                                Python-based automation scripts to extract functional coverage and cross-check register
+                                specifications, reducing manual review effort.
+                            </p>
+                            <p class="exp-text">
+                                Contributed to timing and power analysis reviews of existing modules, applying clock
+                                gating and reset domain handling concepts under guidance, while participating in lint
+                                and design rule checks to ensure reliability and compliance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="sep">
+                <div class="sep-line"></div>
+            </div>
+
+            <section class="exp fade-in" id="education">
+                <div class="tag">
+                    <span class="tag-dot"></span>
+                    <span class="tag-text">Education</span>
+                </div>
+                <div class="exp-list">
+                    <div class="exp-row fade-in">
+                        <div class="exp-org">Cumberland University</div>
+                        <div class="exp-info">
+                            <div class="exp-role">ITM Project Management</div>
+                            <div class="exp-date">2026 - 2027</div>
+                        </div>
+                    </div>
+                    <div class="exp-row fade-in">
+                        <div class="exp-org">California State University</div>
+                        <div class="exp-info">
+                            <div class="exp-role">Masters in Electrical Engineering</div>
+                            <div class="exp-date">2024 - 2025</div>
+                        </div>
+                    </div>
+                    <div class="exp-row fade-in">
+                        <div class="exp-org">VIT-AP University</div>
+                        <div class="exp-info">
+                            <div class="exp-role">Bachelor's in Electrical Engineering</div>
+                            <div class="exp-date">2020 - 2024 · GPA: 3.00</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer class="site-footer" id="siteFooter">
+        <div class="ft-grid">
+            <div class="ft-col">
+                <h4 class="ft-label">Main</h4>
+                <a href="#" class="ft-link" data-tab="work">Work</a>
+                <a href="#" class="ft-link" data-tab="info">Info</a>
+            </div>
+            <div class="ft-col">
+                <h4 class="ft-label">Contact</h4>
+                <a href="https://linkedin.com" target="_blank" rel="noopener" class="ft-link">
+                    LinkedIn
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </a>
+                <a href="#" class="ft-link">
+                    Resume
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="ft-bottom">
+            <p class="ft-copy">&copy; 2026 Moksha Vignan Nimmagadda. All Rights Reserved.</p>
+            <p class="ft-note">Built with passion for engineering and innovation.</p>
+        </div>
+    </footer>
+
+    <script src="portfolio.js"></script>
+</body>
+
+</html>
