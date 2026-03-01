@@ -37,18 +37,34 @@ window.addEventListener('scroll', () => {
 });
 
 // Tab Switching
+const tabsIndicator = document.querySelector('.tabs-indicator');
+
+function updateIndicator(activeBtn) {
+    if (!tabsIndicator || !activeBtn) return;
+    const offsetLeft = activeBtn.offsetLeft;
+    const btnWidth = activeBtn.offsetWidth;
+    const indicatorWidth = 24; // Fixed glowing line width
+    const translate = offsetLeft + (btnWidth / 2) - (indicatorWidth / 2);
+    tabsIndicator.style.transform = `translateX(${translate}px)`;
+}
+
+// Initial setup
+updateIndicator(btnInfo);
+
 function switchTab(tabId) {
     if (tabId === 'work') {
         panelWork.classList.remove('hidden');
         panelInfo.classList.add('hidden');
         btnWork.classList.add('active');
         btnInfo.classList.remove('active');
+        updateIndicator(btnWork);
         initFade(panelWork);
     } else {
         panelInfo.classList.remove('hidden');
         panelWork.classList.add('hidden');
         btnInfo.classList.add('active');
         btnWork.classList.remove('active');
+        updateIndicator(btnInfo);
         initFade(panelInfo);
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -57,6 +73,12 @@ function switchTab(tabId) {
 btnWork.addEventListener('click', () => switchTab('work'));
 btnInfo.addEventListener('click', () => switchTab('info'));
 
+// Re-calc indicator position on window resize
+window.addEventListener('resize', () => {
+    const activeBtn = document.querySelector('.tab-btn.active');
+    updateIndicator(activeBtn);
+});
+
 // Footer tab links
 document.querySelectorAll('.ft-link[data-tab]').forEach((link) => {
     link.addEventListener('click', (e) => {
@@ -64,3 +86,22 @@ document.querySelectorAll('.ft-link[data-tab]').forEach((link) => {
         switchTab(link.dataset.tab);
     });
 });
+
+// Mobile menu toggle
+const menuToggle = document.getElementById('menuToggle');
+const mobileDropdown = document.getElementById('mobileDropdown');
+
+if (menuToggle && mobileDropdown) {
+    menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = menuToggle.classList.toggle('open');
+        mobileDropdown.classList.toggle('show', isOpen);
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!menuToggle.contains(e.target) && !mobileDropdown.contains(e.target)) {
+            menuToggle.classList.remove('open');
+            mobileDropdown.classList.remove('show');
+        }
+    });
+}

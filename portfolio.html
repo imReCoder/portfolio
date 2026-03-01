@@ -32,7 +32,7 @@
             <button class="tab-btn active" id="btnInfo" type="button">Info</button>
         </nav>
 
-        <div class="ext-links">
+        <div class="ext-links" id="extLinks">
             <a href="https://linkedin.com" target="_blank" rel="noopener" class="ext-link">
                 LinkedIn
                 <svg viewBox="0 0 24 24">
@@ -42,6 +42,28 @@
             <a href="#" class="ext-link">
                 Resume
                 <svg viewBox="0 0 24 24">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg>
+            </a>
+        </div>
+
+        <!-- Mobile menu toggle -->
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open links menu">
+            <span class="toggle-at">@</span>
+            <span class="toggle-close">✕</span>
+        </button>
+
+        <!-- Mobile dropdown -->
+        <div class="mobile-dropdown" id="mobileDropdown">
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="mobile-dropdown-link">
+                LinkedIn
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg>
+            </a>
+            <a href="#" class="mobile-dropdown-link">
+                Resume
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M7 17L17 7M17 7H7M17 7V17" />
                 </svg>
             </a>
