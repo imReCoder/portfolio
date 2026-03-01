@@ -49,7 +49,12 @@ function updateIndicator(activeBtn) {
 }
 
 // Initial setup
-updateIndicator(btnInfo);
+const queryParams = new URLSearchParams(window.location.search);
+if (queryParams.get('tab') === 'work') {
+    switchTab('work');
+} else {
+    updateIndicator(btnInfo);
+}
 
 function switchTab(tabId) {
     if (tabId === 'work') {
