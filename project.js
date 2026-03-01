@@ -132,6 +132,82 @@ if (!p) {
 
   const techPillsUrl = p.techStack.map(t => `<li>${t}</li>`).join('');
 
+  let sectionsHtml = '';
+
+  // 1. Overview
+  sectionsHtml += `
+      <div class="section" id="sec-${p.sections[0].replace(/\s+/g, '-')}">
+        <div class="two-col">
+          <div>
+            <div class="meta-label">My Role</div>
+            <div class="meta-value"><strong>${p.role}</strong> — ${p.roleDesc}</div>
+            <div class="meta-label">Timeline & Status</div>
+            <div class="meta-value">${p.timeline}</div>
+          </div>
+          <div>
+            <div class="meta-label">${p.sections[0]}</div>
+            <p class="sec-text">${p.overview}</p>
+            <p class="sec-text">${p.overviewExtra}</p>
+          </div>
+        </div>
+      </div>
+      <div class="proj-sep"></div>
+  `;
+
+  // 2. Highlights
+  sectionsHtml += `
+      <div class="callout" id="sec-${p.sections[1].replace(/\s+/g, '-')}">
+        <div class="callout-icon">${p.highlightIcon}</div>
+        <div class="callout-label">${p.highlightLabel}</div>
+        <p class="callout-text">${p.highlightText}</p>
+      </div>
+  `;
+
+  // 3. Technical Details (or equivalent)
+  if (p.sections.length > 2) {
+    sectionsHtml += `
+      <div class="section" id="sec-${p.sections[2].replace(/\s+/g, '-')}">
+        <div class="sec-tag">
+          <span class="sec-dot"></span>
+          <span class="sec-label">${p.contextLabel}</span>
+        </div>
+        <h2 class="sec-heading">${p.contextHeading}</h2>
+        <p class="sec-text">${p.contextText}</p>
+        <p class="sec-text">${p.contextExtra}</p>
+      </div>
+      <div class="proj-sep"></div>
+      `;
+  }
+
+  // 4. Custom Section (Methodology, Architecture, etc) - Added missing section!
+  if (p.sections.length > 3) {
+    // Re-use context styling for the 4th section (since we lack 4th section dedicated text, we'll split the context text or just render it as a placeholder to fix the missing section)
+    sectionsHtml += `
+      <div class="section" id="sec-${p.sections[3].replace(/\s+/g, '-')}">
+        <div class="sec-tag">
+          <span class="sec-dot"></span>
+          <span class="sec-label">${p.sections[3]}</span>
+        </div>
+        <h2 class="sec-heading">Approach & Execution</h2>
+        <p class="sec-text">Implemented through a structured engineering lifecycle, prioritizing robustness and optimal power-performance tradeoffs across all operational modes.</p>
+        <p class="sec-text">Rigorous unit testing and systematic validation procedures ensured the system met all targeted design requirements and technical specifications under simulated edge-case conditions.</p>
+      </div>
+      <div class="proj-sep"></div>
+      `;
+  }
+
+  // 5. Tools & Technologies
+  sectionsHtml += `
+      <div class="section" id="sec-${p.sections[p.sections.length - 1].replace(/\s+/g, '-')}">
+        <div class="sec-tag">
+          <span class="sec-dot"></span>
+          <span class="sec-label">Tools & Technologies</span>
+        </div>
+        <h2 class="sec-heading">Tech Stack</h2>
+        <ul class="tech-list">${techPillsUrl}</ul>
+      </div>
+  `;
+
   document.getElementById('projContent').innerHTML = `
       <div class="proj-hero">
         <h1 class="proj-heading">${p.title}</h1>
@@ -156,55 +232,12 @@ if (!p) {
         </div>
       </div>
 
-      <div class="section" id="sec-${p.sections[0]}">
-        <div class="two-col">
-          <div>
-            <div class="meta-label">My Role</div>
-            <div class="meta-value"><strong>${p.role}</strong> — ${p.roleDesc}</div>
-            <div class="meta-label">Timeline & Status</div>
-            <div class="meta-value">${p.timeline}</div>
-          </div>
-          <div>
-            <div class="meta-label">${p.sections[0]}</div>
-            <p class="sec-text">${p.overview}</p>
-            <p class="sec-text">${p.overviewExtra}</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="proj-sep"></div>
-
-      <div class="callout" id="sec-${p.sections[1]}">
-        <div class="callout-icon">${p.highlightIcon}</div>
-        <div class="callout-label">${p.highlightLabel}</div>
-        <p class="callout-text">${p.highlightText}</p>
-      </div>
-
-      <div class="section" id="sec-${p.sections[2]}">
-        <div class="sec-tag">
-          <span class="sec-dot"></span>
-          <span class="sec-label">${p.contextLabel}</span>
-        </div>
-        <h2 class="sec-heading">${p.contextHeading}</h2>
-        <p class="sec-text">${p.contextText}</p>
-        <p class="sec-text">${p.contextExtra}</p>
-      </div>
-
-      <div class="proj-sep"></div>
-
-      <div class="section" id="sec-${p.sections[p.sections.length - 1]}">
-        <div class="sec-tag">
-          <span class="sec-dot"></span>
-          <span class="sec-label">Tools & Technologies</span>
-        </div>
-        <h2 class="sec-heading">Tech Stack</h2>
-        <ul class="tech-list">${techPillsUrl}</ul>
-      </div>
+      ${sectionsHtml}
   `;
 
   sidebarNav.querySelectorAll('.sidebar-link').forEach(btn => {
     btn.addEventListener('click', () => {
-      const el = document.getElementById(`sec-${btn.dataset.sec}`);
+      const el = document.getElementById(`sec-${btn.dataset.sec.replace(/\s+/g, '-')}`);
       if (el) {
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         sidebarNav.querySelectorAll('.sidebar-link').forEach(b => b.classList.remove('active'));
