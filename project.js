@@ -2,7 +2,7 @@ const projects = {
   alu: {
     title: 'Obfuscated 32-Bit ALU',
     subtitle: 'VLSI Design — Academic Project',
-    image: 'images/project-stadia.png',
+    image: 'images/project_alu.png',
     sections: ['Overview', 'Highlights', 'Technical Details', 'Methodology', 'Tools & Technologies'],
     role: 'Lead Designer',
     roleDesc: 'Architecture Design, Verilog HDL Implementation, Verification, Power Analysis',
@@ -12,16 +12,22 @@ const projects = {
     highlightIcon: '🔐',
     highlightLabel: 'The Vision',
     highlightText: 'A secure, power-efficient ALU architecture that uses logic obfuscation to protect intellectual property while maintaining full computational capability.',
-    contextLabel: 'Technical Details',
-    contextHeading: 'Security meets performance.',
-    contextText: 'The project focused on implementing logic obfuscation techniques in a 32-bit ALU to prevent reverse engineering while preserving correct functionality. The Vedic multiplication approach significantly reduced gate count and power consumption compared to traditional multiplier implementations.',
-    contextExtra: 'Binary-Coded Decimal addition was optimized using a novel carry-lookahead approach, enabling faster arithmetic operations while maintaining the obfuscation layer across all functional units.',
+    sec3: {
+      heading: 'Security meets performance.',
+      text: 'The project focused on implementing logic obfuscation techniques in a 32-bit ALU to prevent reverse engineering while preserving correct functionality. The Vedic multiplication approach significantly reduced gate count and power consumption compared to traditional multiplier implementations.',
+      extra: 'Binary-Coded Decimal addition was optimized using a novel carry-lookahead approach, enabling faster arithmetic operations while maintaining the obfuscation layer across all functional units.'
+    },
+    sec4: {
+      heading: 'Methodology & Implementation.',
+      text: 'The design was implemented using Verilog HDL following a rigorous bottom-up methodology. Individual arithmetic logic blocks were designed, synthesized, and verified independently before integrating the global obfuscation module across the datapath.',
+      extra: 'Power and timing analysis were performed iteratively using standard EDA tools to ensure the performance and area overhead introduced by obfuscation gates remained within acceptable limits.'
+    },
     techStack: ['Verilog HDL', 'Synopsys VCS', 'Xilinx Vivado', 'MATLAB', 'Static Timing Analysis', 'Design Rule Check', 'Logic Synthesis']
   },
   switch: {
     title: '4-Port Switch/Router',
     subtitle: 'RTL Design & Verification — Academic Project',
-    image: 'images/project-testhub.png',
+    image: 'images/project_router.png',
     sections: ['Overview', 'Highlights', 'Technical Details', 'Verification', 'Tools & Technologies'],
     role: 'RTL Design Engineer',
     roleDesc: 'RTL Implementation, UVM Testbench Development, STA Checks, Coverage Analysis',
@@ -31,16 +37,22 @@ const projects = {
     highlightIcon: '🔀',
     highlightLabel: 'The Challenge',
     highlightText: 'Design a fully parameterized, verifiable 4-port network switch capable of handling concurrent traffic with deterministic latency and zero data loss.',
-    contextLabel: 'Verification',
-    contextHeading: 'Verification-driven design.',
-    contextText: 'The verification strategy utilized constrained-random stimulus generation through a UVM-based testbench environment. Coverage metrics were tracked across functional, code, and assertion coverage to ensure comprehensive validation.',
-    contextExtra: 'Python-based log analysis scripts were developed to parse simulation outputs, correlate events across ports, and generate regression reports ensuring consistent results across design iterations.',
+    sec3: {
+      heading: 'Routing Architecture.',
+      text: 'The core datapath was structured around a high-speed internal crossbar and parameterized per-port asynchronous FIFOs to handle clock domain crossings and burst traffic. A store-and-forward switching mechanism guaranteed complete packet integrity.',
+      extra: 'Routing decisions were determined by a central arbitration unit using a round-robin protocol to prevent port starvation and ensure fair allocation of internal bandwidth.'
+    },
+    sec4: {
+      heading: 'Verification-driven design.',
+      text: 'The verification strategy utilized constrained-random stimulus generation through a meticulously crafted UVM-based testbench environment. Functional, code, and assertion coverage metrics were continuously monitored.',
+      extra: 'Python-based log analysis scripts were developed to parse simulation outputs, correlate input-to-output events across ports, and generate regression reports ensuring absolute reliability.'
+    },
     techStack: ['Verilog HDL', 'SystemVerilog', 'UVM', 'SVA Assertions', 'Python', 'Synopsys VCS', 'JasperGold']
   },
   pcie: {
     title: 'PCIe Transaction Layer',
     subtitle: 'Digital Design — Academic Project',
-    image: 'images/project-cards.png',
+    image: 'images/project_pcie.png',
     sections: ['Overview', 'Highlights', 'Technical Details', 'Architecture', 'Tools & Technologies'],
     role: 'Design Engineer',
     roleDesc: 'Endpoint Architecture, BAR0 Decode Logic, Credit Counter Implementation, Assertion-based Verification',
@@ -50,16 +62,22 @@ const projects = {
     highlightIcon: '⚡',
     highlightLabel: 'The Goal',
     highlightText: 'Build a compliant PCIe Transaction Layer endpoint capable of handling memory-mapped I/O with efficient credit-based flow control.',
-    contextLabel: 'Architecture',
-    contextHeading: 'Protocol-compliant endpoint design.',
-    contextText: 'The endpoint implements the PCIe Transaction Layer Protocol (TLP) for memory read and write operations. BAR0 address decoding maps incoming requests to the correct internal registers and memory regions.',
-    contextExtra: 'Credit counters manage flow control between the endpoint and root complex, ensuring no buffer overflow conditions while maximizing throughput with support for up to eight outstanding read requests.',
+    sec3: {
+      heading: 'Transaction Handling.',
+      text: 'Engineered robust logic to process incoming Transaction Layer Packets (TLP) efficiently. The system implemented credit-based flow control to prevent buffer overflow and guarantee reliable end-to-end data transmission without dropping packets.',
+      extra: 'Strict tracking of outstanding read requests ensured out-of-order completions were properly aligned and written back to the correct memory-mapped buffers.'
+    },
+    sec4: {
+      heading: 'Protocol-compliant endpoint design.',
+      text: 'The endpoint architecture strictly implements the state machines required by the PCIe base specification. BAR0 address decoding rapidly maps incoming requests to the correct internal registers and memory regions within single cycle latencies.',
+      extra: 'Credit counters actively manage flow control between the endpoint and root complex, ensuring maximum throughput while safely supporting up to eight simultaneous outstanding transactions.'
+    },
     techStack: ['Verilog HDL', 'SystemVerilog Assertions', 'Synopsys VCS', 'Quartus Prime', 'Waveform Analysis', 'Protocol Verification']
   },
   irrigation: {
     title: 'Smart Drip Irrigation',
     subtitle: 'IoT — Academic Project, VIT-AP University',
-    image: 'images/project-stadia.png',
+    image: 'images/project_irrigation.png',
     sections: ['Overview', 'Highlights', 'System Design', 'Sensors & Control', 'Tools & Technologies'],
     role: 'Project Lead',
     roleDesc: 'System Architecture, Arduino Programming, Sensor Integration, Mobile App Interface',
@@ -69,16 +87,22 @@ const projects = {
     highlightIcon: '💧',
     highlightLabel: 'The Impact',
     highlightText: 'An intelligent irrigation system that conserves water by precisely controlling drip irrigation based on real-time environmental data — accessible from a mobile device.',
-    contextLabel: 'System Design',
-    contextHeading: 'Sensor-driven automation.',
-    contextText: 'The Arduino-based controller reads humidity, temperature, and soil moisture sensors at configurable intervals. When readings fall below threshold values, the system activates solenoid valves to deliver precise amounts of water through the drip irrigation network.',
-    contextExtra: 'Mobile connectivity allows farmers to monitor conditions remotely and adjust threshold parameters without physical access to the control unit, making the system practical for large-scale agricultural deployments.',
+    sec3: {
+      heading: 'Architecture & Framework.',
+      text: 'The hardware architecture centers around a microcontroller unit processing continuous analog streams from field sensors. The entire framework ensures data is filtered and threshold logic is applied before making actuation decisions.',
+      extra: 'Mobile connectivity via external modules allows farmers to monitor environmental conditions remotely and dynamically adjust operational threshold parameters from anywhere.'
+    },
+    sec4: {
+      heading: 'Sensor-driven automation.',
+      text: 'The Arduino reads humidity, temperature, and capacitive soil moisture sensors at configurable intervals. When readings fall below physiological threshold values, the system activates solenoid valves.',
+      extra: 'This delivers precise amounts of water directly to the plant roots through the drip irrigation network, completely eliminating water waste and preventing over-hydration.'
+    },
     techStack: ['Arduino', 'C/C++', 'DHT11 Sensor', 'Soil Moisture Sensor', 'Solenoid Valves', 'Mobile Interface', 'IoT Protocols']
   },
   vehicle: {
     title: 'Vehicle Speed Control',
     subtitle: 'Embedded Systems — Academic Project, VIT-AP University',
-    image: 'images/project-testhub.png',
+    image: 'images/project_vehicle.png',
     sections: ['Overview', 'Highlights', 'Control System', 'Safety Features', 'Tools & Technologies'],
     role: 'Design Engineer',
     roleDesc: 'Embedded System Design, Speed Regulation Algorithm, Sensor Integration, Safety Logic',
@@ -88,16 +112,22 @@ const projects = {
     highlightIcon: '🚗',
     highlightLabel: 'The Problem',
     highlightText: 'Road accidents caused by overspeeding remain a leading cause of fatalities — this system aims to eliminate human error from speed regulation entirely.',
-    contextLabel: 'Safety Features',
-    contextHeading: 'Autonomous speed regulation.',
-    contextText: 'The embedded controller interfaces with the vehicle\'s speedometer and braking system. Speed zones are pre-programmed or dynamically updated via GPS, and the system automatically adjusts throttle and braking to maintain safe speeds.',
-    contextExtra: 'Fail-safe mechanisms ensure that the system degrades gracefully in case of sensor failures, always defaulting to a safe operating mode rather than losing control.',
+    sec3: {
+      heading: 'Embedded Regulation Engine.',
+      text: 'The core control system relies on a high-frequency polling loop reading speed sensors and GPS data. A pre-programmed state machine applies a closed-loop PID algorithm to seamlessly adjust throttle positions and active braking mechanisms.',
+      extra: 'Speed restriction zones are dynamically updated over the air, enabling instant compliance with geographic speed limits and high-risk parameters.'
+    },
+    sec4: {
+      heading: 'Autonomous safety logic.',
+      text: 'Safety is prioritized through redundant embedded logic that cross-verifies sensor inputs. If manual driving speed exceeds the GPS localized limit, the system gracefully overrides the manual throttle to safely decelerate the vehicle.',
+      extra: 'Critical fail-safe mechanisms ensure that in the event of hardware or sensor failure, the system degrades to a safe operating envelope rather than causing abrupt, dangerous stops.'
+    },
     techStack: ['Embedded C', 'Microcontroller', 'Speed Sensors', 'GPS Module', 'Motor Control', 'Safety Logic', 'PCB Design']
   },
   insect: {
     title: 'Insect Detector & Agriculture',
     subtitle: 'Agriculture IoT — Academic Project, VIT-AP University',
-    image: 'images/project-cards.png',
+    image: 'images/project_insect.png',
     sections: ['Overview', 'Highlights', 'Detection System', 'Solar Power', 'Tools & Technologies'],
     role: 'Project Lead',
     roleDesc: 'Detection System Design, Solar Power Integration, Mobile Alert System, Irrigation Control',
@@ -107,10 +137,16 @@ const projects = {
     highlightIcon: '🌱',
     highlightLabel: 'Innovation',
     highlightText: 'A self-sustaining agricultural protection system combining solar-powered pest detection with automated irrigation — designed for rural deployments without grid power.',
-    contextLabel: 'Solar Power',
-    contextHeading: 'Sun-tracking energy system.',
-    contextText: 'The solar panel is mounted on a servo-driven tracking system that follows the sun\'s position throughout the day, maximizing energy capture. The captured energy powers both the detection sensors and the irrigation control system.',
-    contextExtra: 'A battery backup ensures continuous operation during cloudy conditions and nighttime, when pest activity may be highest. The system prioritizes critical functions (detection and alerts) when power reserves are low.',
+    sec3: {
+      heading: 'Intelligent Bug Detection.',
+      text: 'The detection system utilizes a grid of IR sensors combined with lightweight computer vision to identify the presence of unauthorized pests. The sensitivity is calibrated to avoid triggering on falling leaves or weather anomalies.',
+      extra: 'Upon positive detection, the GSM module immediately dispatches SMS alerts to the farmer\'s mobile device, specifying the exact zone of the breach.'
+    },
+    sec4: {
+      heading: 'Sun-tracking energy system.',
+      text: 'The primary solar panel is mounted on a dual-axis servo tracking system that maps the sun\'s trajectory. This maximizes energy capture to power both the detection grid and the automated irrigation valves indefinitely.',
+      extra: 'Intelligent battery management ensures continuous operation at night when pest activity peaks, selectively powering down non-critical sensors to preserve the core detection perimeter.'
+    },
     techStack: ['Arduino', 'Solar Panel', 'Servo Motors', 'IR Sensors', 'GSM Module', 'Battery Management', 'Drip Irrigation']
   }
 };
@@ -164,33 +200,32 @@ if (!p) {
   `;
 
   // 3. Technical Details (or equivalent)
-  if (p.sections.length > 2) {
+  if (p.sections.length > 2 && p.sec3) {
     sectionsHtml += `
       <div class="section" id="sec-${p.sections[2].replace(/\s+/g, '-')}">
         <div class="sec-tag">
           <span class="sec-dot"></span>
-          <span class="sec-label">${p.contextLabel}</span>
+          <span class="sec-label">${p.sections[2]}</span>
         </div>
-        <h2 class="sec-heading">${p.contextHeading}</h2>
-        <p class="sec-text">${p.contextText}</p>
-        <p class="sec-text">${p.contextExtra}</p>
+        <h2 class="sec-heading">${p.sec3.heading}</h2>
+        <p class="sec-text">${p.sec3.text}</p>
+        <p class="sec-text">${p.sec3.extra}</p>
       </div>
       <div class="proj-sep"></div>
       `;
   }
 
-  // 4. Custom Section (Methodology, Architecture, etc) - Added missing section!
-  if (p.sections.length > 3) {
-    // Re-use context styling for the 4th section (since we lack 4th section dedicated text, we'll split the context text or just render it as a placeholder to fix the missing section)
+  // 4. Custom Section (Methodology, Architecture, etc)
+  if (p.sections.length > 3 && p.sec4) {
     sectionsHtml += `
       <div class="section" id="sec-${p.sections[3].replace(/\s+/g, '-')}">
         <div class="sec-tag">
           <span class="sec-dot"></span>
           <span class="sec-label">${p.sections[3]}</span>
         </div>
-        <h2 class="sec-heading">Approach & Execution</h2>
-        <p class="sec-text">Implemented through a structured engineering lifecycle, prioritizing robustness and optimal power-performance tradeoffs across all operational modes.</p>
-        <p class="sec-text">Rigorous unit testing and systematic validation procedures ensured the system met all targeted design requirements and technical specifications under simulated edge-case conditions.</p>
+        <h2 class="sec-heading">${p.sec4.heading}</h2>
+        <p class="sec-text">${p.sec4.text}</p>
+        <p class="sec-text">${p.sec4.extra}</p>
       </div>
       <div class="proj-sep"></div>
       `;
